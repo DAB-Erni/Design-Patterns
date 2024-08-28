@@ -14,3 +14,5 @@ namespace Decorator
         }
     }
 }
+
+// Base Decorator

@@ -2,18 +2,15 @@ namespace Decorator
 {
     public class EmojiDecorator : ChatMessageDecorator
     {
-        public EmojiDecorator(IChatMessage message) : base(message)
+        private string _emoji;
+        public EmojiDecorator(IChatMessage message, string emoji) : base(message)
         {
+            _emoji = emoji;
         }
 
         public override string getMessage()
         {
-            return AddEmojis(_chatMessage.getMessage());
-        }
-
-        private string AddEmojis(string message)
-        {
-            return message.Replace(":)", "✨");
+            return _chatMessage.getMessage() + " " + _emoji;
         }
     }
 }
